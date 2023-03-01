@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <script>
+   
+//  1
+function camelize(str) {
+  return str
+    .split('-') 
+    .map(
+      
+      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(''); 
+}
+  //  2
+  function filterRange(arr2, a, b) {
+  return arr2.filter(item => (a <= item && item <= b));
+}
+
+let arr2 = [5, 3, 8, 1];
+
+let filtered = filterRange(arr2, 1, 4);
+
+alert( filtered ); 
+
+alert( arr2 ); 
+
+// 3
+
+function filterRangeInPlace(arr3, a, b) {
+
+for (let i = 0; i < arr3.length; i++) {
+  let val = arr3[i];
+
+  if (val < a || val > b) {
+    arr3.splice(i, 1);
+    i--;
+  }
+}
+
+}
+
+let arr3 = [5, 3, 8, 1];
+
+filterRangeInPlace(arr3, 1, 4); 
+
+alert( arr3 ); 
+
+// 4
+let arr4 = [5, 2, 1, -10, 8];
+
+arr4.sort((a, b) => b - a);
+
+alert( arr4 );
+
+
+// 5
+function copySorted(arr5) {
+  return arr5.slice().sort();
+}
+
+let arr5 = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr5);
+
+alert( sorted );
+alert( arr5 );
+
+// 6
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [ vasya, petya, masha ];
+
+let names = users.map(item => item.name);
+
+alert( names );
+
+// 7
+function sortByAge(arr) {
+  arr.sort((a, b) => a.age > b.age ? 1 : -1);
+}
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let arr = [ vasya, petya, masha ];
+
+sortByAge(arr);
+
+alert(arr[0].name); 
+alert(arr[1].name); 
+alert(arr[2].name); 
+
+// 7
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
+let arr = [1, 2, 3];
+shuffle(arr);
+alert(arr);
+
+// 8
+function getAverageAge(users) {
+  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+}
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 29 };
+
+let arr = [ vasya, petya, masha ];
+
+alert( getAverageAge(arr) );
+
+// 9
+function unique(arr) {
+  let result = [];
+
+  for (let str of arr) {
+    if (!result.includes(str)) {
+      result.push(str);
+    }
+  }
+
+  return result;
+}
+
+let strings = ["кришна", "кришна", "харе", "харе",
+  "харе", "харе", "кришна", "кришна", ":-O"
+];
+
+alert( unique(strings) );
+
+// 10
+function groupById(array) {
+  return array.reduce((obj, value) => {
+    obj[value.id] = value;
+    return obj;
+  }, {})
+}
+
+
+  </script>
+
+</body>
+</html>
