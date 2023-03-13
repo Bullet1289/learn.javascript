@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1> Добавить функциям метод "f.defer(ms)" </h1>
+    <script>
+
+        Function.prototype.defer = function (ms) {
+            setTimeout(this, ms);
+        };
+
+        function f() {
+            alert("Hello!");
+        }
+
+        f.defer(1000);
+
+
+
+    </script>
+
+</body>
+
+</html>
