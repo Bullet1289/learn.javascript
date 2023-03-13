@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1> Декоратор debounce </h1>
+    <script>
+
+        function debounce(f, ms) {
+
+            let isCooldown = false;
+
+            return function () {
+                if (isCooldown) return;
+
+                f.apply(this, arguments);
+
+                isCooldown = true;
+
+                setTimeout(() => isCooldown = false, ms);
+            };
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
