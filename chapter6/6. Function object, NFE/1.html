@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1> Установка и уменьшение значения счётчика </h1>
+    <script>
+        function makeCounter() {
+            let count = 0;
+
+            function counter() {
+                return count++;
+            }
+
+            counter.set = value => count = value;
+
+            counter.decrease = () => count--;
+
+            return counter;
+        }
+
+    </script>
+
+</body>
+
+</html>

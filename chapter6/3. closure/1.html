@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1> Сумма с помощью замыканий </h1>
+    <script>
+        function sum(a) {
+
+            return function (b) {
+                return a + b;
+            };
+
+        }
+
+        alert(sum(1)(2));
+        alert(sum(5)(-1));
+
+    </script>
+
+</body>
+
+</html>
